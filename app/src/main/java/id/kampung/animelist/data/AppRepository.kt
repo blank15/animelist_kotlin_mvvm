@@ -11,11 +11,13 @@ class AppRepository(val remoteDataSource: AppDataSource,val localDataSource: App
             }
 
             override fun onDataNotAvailable() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onError(errorMessage: String?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                if(errorMessage != null ){
+
+                }
             }
 
 
@@ -26,7 +28,6 @@ class AppRepository(val remoteDataSource: AppDataSource,val localDataSource: App
     override fun saveAnime(detailModel: DetailModel) {
         localDataSource.saveAnime(detailModel)
     }
-
 
 
     var isRemote = false

@@ -31,7 +31,7 @@ class SummerFragment : Fragment() {
 
         viewBinding.let {
             it.viewModel = viewBinding.viewModel
-
+            it.setLifecycleOwner(this@SummerFragment)
         }
 
         showProgressBar()

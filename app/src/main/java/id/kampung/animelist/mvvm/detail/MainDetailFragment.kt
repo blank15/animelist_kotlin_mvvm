@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import id.kampung.animelist.R
 import id.kampung.animelist.base.BaseFragment
 import id.kampung.animelist.databinding.DetailFragmentBinding
-import id.kampung.animelist.mvvm.main.MainFragment
 
 
 class MainDetailFragment : BaseFragment() {

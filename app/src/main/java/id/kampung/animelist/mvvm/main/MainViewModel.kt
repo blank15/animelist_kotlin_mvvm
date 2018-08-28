@@ -100,7 +100,7 @@ class MainViewModel(context : Application,private val appRepository: AppReposito
                 }
 
                 override fun onError(errorMessage: String?) {
-                    showProgress.value = false
+                    showProgress.value
                     if(errorMessage!=null){
                         showSnackbarMessage(errorMessage)
                     }

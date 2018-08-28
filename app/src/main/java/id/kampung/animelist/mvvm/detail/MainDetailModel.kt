@@ -3,13 +3,14 @@ package id.kampung.animelist.mvvm.detail
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
+import android.support.annotation.StringRes
 import id.kampung.animelist.data.AppDataSource
 import id.kampung.animelist.data.AppRepository
 import id.kampung.animelist.data.model.DetailModel
 import id.kampung.animelist.util.SingleLiveEvent
 
 class MainDetailModel(context : Application, private val appRepository: AppRepository) : AndroidViewModel(context) {
-    var detailLive = SingleLiveEvent<DetailModel>()
+
     val snackBarMessageRemote = SingleLiveEvent<String>()
     val snackBarMessage = SingleLiveEvent<Int>()
     var titleAnime = SingleLiveEvent<String>()
@@ -47,10 +48,23 @@ class MainDetailModel(context : Application, private val appRepository: AppRepos
             }
 
             override fun onError(errorMessage: String?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                if(errorMessage!=null){
+                    showSnackbarMessage(errorMessage)
+                }
             }
 
 
         })
+    }
+    fun showSnackbarMessage(mMessage: String) {
+        snackBarMessageRemote.value = mMessage
+    }
+
+    /**
+     * Show message response from Local resource
+     * @param mMessage
+     */
+    private fun showSnackbarMessage(@StringRes mMessage: Int) {
+        snackBarMessage.value = mMessage
     }
 }

@@ -8,7 +8,7 @@ import id.kampung.animelist.util.replaceFragmentInActivity
 
 class MainDetailActivity : BaseActivity() {
     private lateinit var viewModel: MainDetailModel
-     var idAnime: String = "34134"
+     private var idAnime: String = "34134"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_detail)

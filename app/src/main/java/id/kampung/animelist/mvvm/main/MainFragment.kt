@@ -22,17 +22,14 @@ class MainFragment : BaseFragment() {
 
         viewBinding.let {
             it.viewModel = viewBinding.viewModel
-
+            it.setLifecycleOwner(this@MainFragment)
         }
 
         val fragmentAdapter = PagerAdapter(fm = childFragmentManager)
         viewBinding.viewpagerMain.adapter = fragmentAdapter
         viewBinding.tabsMain.setupWithViewPager(viewBinding.viewpagerMain)
-
         return viewBinding.root
     }
-
-
 
     companion object {
         fun newInstance() = MainFragment().apply {
