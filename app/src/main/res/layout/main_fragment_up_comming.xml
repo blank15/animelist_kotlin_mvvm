@@ -20,13 +20,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-            app:adapter="@{viewModel.adapterList}"
+            app:adapter="@{viewModel.adapterListUpComing}"
             />
 
         <ProgressBar
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="@{viewModel.showProgress ? View.VISIBLE : View.GONE}"/>
+           android:id="@+id/progressbar"/>
     </RelativeLayout>
 </layout>

@@ -14,7 +14,7 @@ class MainDetailActivity : BaseActivity() {
         setContentView(R.layout.activity_main_detail)
         val id = intent.getIntExtra("idAnime",0)
         idAnime = id.toString()
-        println("idanime $idAnime")
+
         setupFragment()
         setupViewModel()
     }

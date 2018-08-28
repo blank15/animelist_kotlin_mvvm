@@ -27,7 +27,8 @@ class MainViewModel(context : Application,private val appRepository: AppReposito
     var seassonListLive = MutableLiveData<List<DetailModel>>()
     val snackBarMessageRemote = SingleLiveEvent<String>()
     val snackBarMessage = SingleLiveEvent<Int>()
-    var showProgress = MutableLiveData<Boolean>()
+    var showProgress = SingleLiveEvent<Boolean>()
+    var showProgress2 = SingleLiveEvent<Boolean>()
     var data :List<DetailModel> = emptyList()
     var dataUpComing :List<DetailModel> = emptyList()
     var title = String()
@@ -46,12 +47,12 @@ class MainViewModel(context : Application,private val appRepository: AppReposito
     }
 
     private fun getUpComing(remote: Boolean) {
-        showProgress.value = true
+        showProgress2.value = true
 
         if (remote) {
             appRepository.remoteDataSource.getTopAnime(object  : AppDataSource.GetAnimeSessionCallback{
                 override fun onDataLoaded(detailModel: List<DetailModel>?) {
-                    showProgress.value = false
+                    showProgress2.value = false
                     if(detailModel != null){
                         dataUpComing = detailModel
                         seassonListLive.postValue(detailModel)
@@ -67,6 +68,7 @@ class MainViewModel(context : Application,private val appRepository: AppReposito
                 }
 
                 override fun onError(errorMessage: String?) {
+                    showProgress2.value = false
                     if(errorMessage!=null){
                         showSnackbarMessage(errorMessage)
                     }
@@ -98,6 +100,7 @@ class MainViewModel(context : Application,private val appRepository: AppReposito
                 }
 
                 override fun onError(errorMessage: String?) {
+                    showProgress.value = false
                     if(errorMessage!=null){
                         showSnackbarMessage(errorMessage)
                     }
