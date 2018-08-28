@@ -16,11 +16,12 @@ import android.os.Bundle
 
 
 
-class MainViewModel(context : Application,private val appRepository: AppRepository,private val contexts : Context) : AndroidViewModel(context),MainItemClickAction {
+class MainViewModel(private val context : Application,private val appRepository: AppRepository,private val contexts : Context) : AndroidViewModel(context),MainItemClickAction {
     override fun onItemClicked(detailModel: DetailModel) {
 
-        var intent = Intent(contexts, MainDetailActivity::class.java)
+        val intent = Intent(contexts, MainDetailActivity::class.java)
         intent.putExtra("idAnime",detailModel.mal_id )
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         contexts.startActivity(intent)
     }
 
