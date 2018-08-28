@@ -14,7 +14,7 @@ class AppLocalDataSource private constructor(val appExecutors: AppExecutors,
 
             appExecutors.mainThread.execute {
                 if (anime.isEmpty()){
-                    callback.onError("Data movie tidak ditemukan")
+                    callback.onError("Data anime tidak ditemukan")
                 } else {
                     callback.onDataLoaded(anime)
                 }
@@ -34,7 +34,7 @@ class AppLocalDataSource private constructor(val appExecutors: AppExecutors,
 
             appExecutors.mainThread.execute {
                 if (anime.isEmpty()){
-                    callback.onError("Data movie tidak ditemukan")
+                    callback.onError("Data anime tidak ditemukan")
                 } else {
                     callback.onDataLoaded(anime)
                 }
@@ -48,9 +48,9 @@ class AppLocalDataSource private constructor(val appExecutors: AppExecutors,
 
             appExecutors.mainThread.execute {
                 if (animes.isEmpty()){
-                    callback.onError("Data movie tidak ditemukan")
+                    callback.onError("Data anime tidak ditemukan")
                 } else {
-                    callback.onDataLoaded(animes.get(1)!!)
+                    callback.onDataLoaded(animes.get(idAnime.toInt())!!)
                 }
             }
         }

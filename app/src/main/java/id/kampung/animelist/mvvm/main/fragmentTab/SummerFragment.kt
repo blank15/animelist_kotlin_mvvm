@@ -17,15 +17,11 @@ import id.kampung.animelist.mvvm.main.MainItemClickAction
 import id.kampung.animelist.mvvm.detail.MainDetailActivity
 
 
-class SummerFragment : Fragment(),MainItemClickAction {
-    override fun onItemClicked(detailModel: DetailModel) {
-        val intent = Intent(context, MainDetailActivity::class.java)
-        intent.putExtra("idAnime",detailModel.mal_id )
-        startActivity(intent)
-    }
+class SummerFragment : Fragment() {
+
 
     private lateinit var viewBinding: MainFragmentSummerBinding
-    private lateinit var mainAdapter: AdapterList
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -56,24 +52,11 @@ class SummerFragment : Fragment(),MainItemClickAction {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        setUpAnime()
-    }
 
     override fun onResume() {
         super.onResume()
         viewBinding.viewModel!!.start()
     }
 
-    private fun setUpAnime() {
-        val viewModel = viewBinding.viewModel
 
-          if(viewModel != null){
-              mainAdapter = AdapterList(ArrayList(),this)
-              viewBinding.recyclerviewMain.adapter = mainAdapter
-
-          }
-
-    }
 }
