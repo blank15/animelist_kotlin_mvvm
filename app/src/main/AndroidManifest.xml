@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".mvvm.main.MainActivity"
+            android:theme="@style/AppTheme"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +19,8 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".mvvm.detail.MainDetailActivity">
+        <activity android:name=".mvvm.detail.MainDetailActivity"
+            android:theme="@style/AppThemeDetail">
 
         </activity>
     </application>
