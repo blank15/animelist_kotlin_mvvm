@@ -5,7 +5,7 @@ import id.kampung.animelist.data.model.DetailModel
 
 interface AppDataSource {
     fun getAnimeSession(callback: GetAnimeSessionCallback)
-    fun getDetailAnime(id : String,callback: GetDetailAnimeCallback)
+    fun getDetailAnime(idAnime : String,callback: GetDetailAnimeCallback)
     fun getTopAnime(callback: GetAnimeSessionCallback)
 
     fun remoteAnime(isRemote: Boolean)
