@@ -16,6 +16,6 @@ open class BaseActivity : AppCompatActivity(){
     //Todo attach base context calligraphy font in here
 
     override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 }

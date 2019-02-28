@@ -30,7 +30,7 @@ class MainDetailModel(context : Application, private val appRepository: AppRepos
             override fun onDataLoaded(detailModel: DetailModel?) {
 
                     if(detailModel!= null){
-                        titleAnime.value = detailModel!!.title
+                        titleAnime.value = detailModel.title
                         popularitas.value = detailModel.popularity
                         tanggalRilis.value = detailModel.aired_string
                         favorite.value = detailModel.favorites

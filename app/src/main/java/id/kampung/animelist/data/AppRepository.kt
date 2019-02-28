@@ -50,7 +50,7 @@ class AppRepository(val remoteDataSource: AppDataSource,val localDataSource: App
         remoteDataSource.getAnimeSession(object : AppDataSource.GetAnimeSessionCallback{
             override fun onDataLoaded(detailModel: List<DetailModel>?) {
                 if (detailModel!!.isNotEmpty()) {
-                    var j = 0
+                    var j:Int
 
                     for (i in 0 until detailModel.size) {
                         j = i

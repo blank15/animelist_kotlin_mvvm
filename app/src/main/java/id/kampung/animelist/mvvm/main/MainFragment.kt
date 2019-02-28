@@ -16,7 +16,7 @@ class MainFragment : BaseFragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
-        viewBinding = MainFragmentBinding.inflate(inflater!!, container, false).apply {
+        viewBinding = MainFragmentBinding.inflate(inflater, container, false).apply {
             viewModel = (activity as MainActivity).obtainViewModel()
         }
 

@@ -50,7 +50,7 @@ class AppLocalDataSource private constructor(val appExecutors: AppExecutors,
                 if (animes.isEmpty()){
                     callback.onError("Data anime tidak ditemukan")
                 } else {
-                    callback.onDataLoaded(animes.get(idAnime.toInt())!!)
+                    callback.onDataLoaded(animes.get(idAnime.toInt()))
                 }
             }
         }

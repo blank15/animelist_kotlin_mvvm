@@ -12,7 +12,7 @@ object AppRemoteData : AppDataSource {
                 .subscribeOn(Schedulers.io())
                 .subscribe({ results ->
                     run {
-                        if (results.top!!.isNotEmpty()) {
+                        if (results.top.isNotEmpty()) {
                             callback.onDataLoaded(results.top)
                         } else {
                             callback.onDataNotAvailable()
@@ -55,7 +55,7 @@ object AppRemoteData : AppDataSource {
                 .subscribeOn(Schedulers.io())
                 .subscribe({ results ->
                     run {
-                        if (results.season!!.isNotEmpty()) {
+                        if (results.season.isNotEmpty()) {
                             callback.onDataLoaded(results.season)
                         } else {
                             callback.onDataNotAvailable()
